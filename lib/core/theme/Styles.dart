@@ -8,7 +8,7 @@ TextStyle _getTextStyle(
   Color color,
 ) {
   //
-  return GoogleFonts.poppins(
+  return GoogleFonts.notoKufiArabic(
     fontSize: fontSize,
     fontWeight: fontWeight,
     color: color,
@@ -30,6 +30,7 @@ TextStyle getMain16Style600() {
     AppColors.mainColor,
   );
 }
+
 TextStyle getMediumGrey13() {
   return _getTextStyle(
     13,
