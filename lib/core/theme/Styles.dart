@@ -15,11 +15,11 @@ TextStyle _getTextStyle(
   );
 }
 
-TextStyle getBoldWhite25Style() {
+TextStyle getBoldWhite15Style() {
   return _getTextStyle(
-    25,
+    20,
     FontWeight.bold,
-    AppColors.mainColor,
+    AppColors.whiteColor,
   );
 }
 
