@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:parking_app/core/routes/routes.dart';
-import 'package:parking_app/featuers/Auth/auth_screen.dart';
-import 'package:parking_app/featuers/Home/home_screen.dart';
-import 'package:parking_app/featuers/maps/maps_screen.dart';
+import 'package:parking_app/featuers/Auth/login_screen.dart';
+import 'package:parking_app/featuers/Auth/register_screen.dart';
+import 'package:parking_app/featuers/Home/screens/home_screen.dart';
+import 'package:parking_app/featuers/maps/booking_screen.dart';
+import 'package:parking_app/featuers/notifications/notifications_screen.dart';
 import 'package:parking_app/featuers/splash/splash_screen.dart';
 
 class AppRouter {
@@ -18,13 +20,23 @@ class AppRouter {
       case Routes.mapsScreen:
         return PageTransition(
           type: PageTransitionType.fade,
-          child: MapsScreen(),
+          child: BookingScreen(),
         );
 
-      case Routes.authScreen:
+      case Routes.registerScreen:
         return PageTransition(
           type: PageTransitionType.fade,
-          child: AuthScreen(),
+          child: RegisterScreen(),
+        );
+      case Routes.loginScreen:
+        return PageTransition(
+          type: PageTransitionType.fade,
+          child: LoginScreen(),
+        );
+      case Routes.notificationsScreen:
+        return PageTransition(
+          type: PageTransitionType.fade,
+          child: NotificationsScreen(),
         );
 
       case Routes.splashScreen:

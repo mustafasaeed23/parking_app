@@ -11,11 +11,12 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _containerAnimation;
   late Animation<double> _imageAnimation;
-  
+
   @override
   void initState() {
     super.initState();
@@ -31,15 +32,17 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
         .animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
 
     // Image Animation (Appears after 1s delay)
-    _imageAnimation = Tween<double>(begin: 0.0, end: 1.0)
-        .animate(CurvedAnimation(parent: _controller, curve: Interval(0.5, 1.0, curve: Curves.easeOut)));
+    _imageAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+        CurvedAnimation(
+            parent: _controller,
+            curve: Interval(0.5, 1.0, curve: Curves.easeOut)));
 
     // Start Animation
     _controller.forward();
 
     // Navigate after 3 seconds
     Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, Routes.authScreen);
+      Navigator.pushReplacementNamed(context, Routes.registerScreen);
     });
   }
 
