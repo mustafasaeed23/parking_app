@@ -102,7 +102,7 @@ class CustomTextFormField extends StatelessWidget {
       child: TextFormField(
         cursorColor: textColor ?? AppColors.blackColor,
         onEditingComplete: onEditingComplete,
-        textAlign: textAlign ?? TextAlign.end,
+        textAlign: textAlign ?? TextAlign.start,
         style: getBoldWhite15Style().copyWith(
           color: AppColors.blackColor,
           fontSize: 12.sp,
