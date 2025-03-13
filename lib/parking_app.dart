@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:parking_app/core/routes/app_router.dart';
 import 'package:parking_app/core/routes/routes.dart';
+import 'package:parking_app/featuers/Auth/bloc/authentication_bloc.dart';
 
 class ParkingApp extends StatefulWidget {
   const ParkingApp({super.key, required this.appRouter});
@@ -14,22 +16,29 @@ class ParkingApp extends StatefulWidget {
 class _ParkingAppState extends State<ParkingApp> {
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(360, 690),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      // Use builder only if you need to use library outside ScreenUtilInit context
-      builder: (_, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Parking App',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          onGenerateRoute: widget.appRouter.generateRoute,
-          initialRoute: Routes.splashScreen,
-        );
-      },
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AuthenticationBloc(),
+        ),
+      ],
+      child: ScreenUtilInit(
+        designSize: const Size(360, 690),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        // Use builder only if you need to use library outside ScreenUtilInit context
+        builder: (_, child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Parking App',
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+            ),
+            onGenerateRoute: widget.appRouter.generateRoute,
+            initialRoute: Routes.splashScreen,
+          );
+        },
+      ),
     );
   }
 }
