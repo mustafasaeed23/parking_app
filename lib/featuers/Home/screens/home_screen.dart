@@ -7,7 +7,7 @@ import 'package:parking_app/core/widgets/nav_bar_icon.dart';
 import 'package:parking_app/featuers/Home/screens/home_tab.dart';
 import 'package:parking_app/featuers/Profile/profile_screen.dart';
 import 'package:parking_app/featuers/maps/booking_screen.dart';
-import 'package:parking_app/featuers/parkings/parkings_screen.dart';
+import 'package:parking_app/featuers/parkings/screens/parkings_list_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

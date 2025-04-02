@@ -1,3 +1,4 @@
+import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:parking_app/core/routes/app_router.dart';
@@ -9,6 +10,12 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await FirebaseAppCheck.instance.activate(
+    webProvider: ReCaptchaV3Provider('AIzaSyAs3jcGDsPndSNmUvGqleX3_XuLKJSjxUg'),
+    androidProvider: AndroidProvider.debug,
+  );
+  // String? token = await FirebaseAppCheck.instance.getToken();
+  // print("App Check Token: $token");
   runApp(ParkingApp(
     appRouter: AppRouter(),
   ));
