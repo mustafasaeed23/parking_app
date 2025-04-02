@@ -4,7 +4,13 @@ import 'package:parking_app/core/theme/Colors.dart';
 import 'package:parking_app/core/theme/Styles.dart';
 
 class NearbyParking extends StatelessWidget {
-  const NearbyParking({super.key});
+  const NearbyParking({
+    super.key,
+    this.spotId,
+    this.bookingtime,
+  });
+  final String? spotId;
+  final String? bookingtime;
 
   @override
   Widget build(BuildContext context) {
@@ -32,21 +38,21 @@ class NearbyParking extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  "موقف رقم 1 : موقع السيارة",
+                  "موقف رقم $spotId",
                   style: getMain16Style600().copyWith(
                     color: AppColors.mainColor,
                     fontSize: 12.sp,
                   ),
                 ),
+                // Text(
+                //   "12 - 3 - 2023",
+                //   style: getMain16Style600().copyWith(
+                //     color: Colors.black,
+                //     fontSize: 12.sp,
+                //   ),
+                // ),
                 Text(
-                  "12 - 3 - 2023",
-                  style: getMain16Style600().copyWith(
-                    color: Colors.black,
-                    fontSize: 12.sp,
-                  ),
-                ),
-                Text(
-                  "10:00 - 12:00 صباحا",
+                  bookingtime ?? "10:00 - 12:00 صباحا",
                   style: getMain16Style600().copyWith(
                     color: Colors.black,
                     fontSize: 12.sp,
@@ -54,7 +60,6 @@ class NearbyParking extends StatelessWidget {
                 ),
               ],
             ),
-
           ),
         ],
       ),

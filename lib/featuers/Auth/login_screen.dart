@@ -1,3 +1,4 @@
+import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,6 +16,10 @@ class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  Future<void> _getAppCheckToken() async {
+    String? token = await FirebaseAppCheck.instance.getToken();
+    print("App Check Token: $token");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -131,6 +136,7 @@ class LoginScreen extends StatelessWidget {
                                         password: passwordController.text,
                                       ),
                                     );
+                                _getAppCheckToken();
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: AppColors.goldColor,
