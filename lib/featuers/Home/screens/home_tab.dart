@@ -24,7 +24,7 @@ class HomeTab extends StatelessWidget {
               SizedBox(
                 height: 25.h,
               ),
-              SearchWidget(),
+              // SearchWidget(),
               SizedBox(
                 height: 40.h,
               ),
@@ -33,27 +33,33 @@ class HomeTab extends StatelessWidget {
                 height: 20.h,
               ),
               Text(
-                "الحجوزات الأخيرة",
+                "الحجوزات ألأكثر خدمة",
                 style: getMain16Style600().copyWith(color: Colors.black),
               ),
               SizedBox(
                 height: 15.h,
               ),
-              NearbyParking(),
-              SizedBox(
-                height: 20.h,
+              NearbyParking(
+                spotId: "1",
               ),
-              SizedBox(
-                height: 20.h,
-              ),
-              NearbyParking(),
               SizedBox(
                 height: 20.h,
               ),
               SizedBox(
                 height: 20.h,
               ),
-              NearbyParking(),
+              NearbyParking(
+                spotId: "2",
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              NearbyParking(
+                spotId: "3",
+              ),
               SizedBox(
                 height: 20.h,
               ),
