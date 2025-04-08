@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:parking_app/core/theme/Styles.dart';
 import 'package:parking_app/core/widgets/appbar_widget.dart';
 import 'package:parking_app/featuers/parkings/screens/parking_screen_details.dart';
 // import 'package:url_launcher/url_launcher.dart';

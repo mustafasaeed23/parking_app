@@ -18,9 +18,9 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         GestureDetector(
           onTap: () {
-            context.pushNamedTransition(
-                routeName: Routes.notificationsScreen,
-                type: PageTransitionType.fade);
+            // context.pushNamedTransition(
+            //     routeName: Routes.notificationsScreen,
+            //     type: PageTransitionType.fade);
           },
           child: Container(
             margin: EdgeInsets.only(right: 20.w),

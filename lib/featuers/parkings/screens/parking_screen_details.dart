@@ -88,7 +88,7 @@ class _ParkingScreenState extends State<ParkingScreen> {
                   width: 10.w,
                 ),
                 Text(
-                  "غير شاغر",
+                  "شاغر",
                   style: getMediumGrey13().copyWith(color: Colors.black),
                 )
               ],
